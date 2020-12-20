@@ -1,5 +1,3 @@
-package com.aijus.main;
-
 import java.util.List;
 import java.util.ArrayList;
 
@@ -7,58 +5,58 @@ import java.io.InputStreamReader;
 import java.io.BufferedReader;
 import java.io.IOException;
 
-import com.aijus.math.FibonacciNumber;
-import com.aijus.math.PrimesNumber;
+import FibonacciNumber;
+import PrimesNumber;
 
 public class NumbersMain {
-    public static void main( String[] args ) throws IOException {
-
-
-      System.out.println("‘æN”Ô–Ú‚ÌƒtƒBƒ{ƒiƒbƒ`” ‹y‚Ñ ƒtƒBƒ{ƒiƒbƒ`”—ñ‚ð•\Ž¦‚µ‚Ü‚·B");
-
-      do{
-          System.out.println("“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B( exit ‚Ü‚½‚Í quit‚ÅI—¹‚µ‚Ü‚·B)");
+    public static void main(String[] args) throws IOException {
+        System.out.println("ç¬¬Nç•ªç›®ã®ãƒ•ã‚£ãƒœãƒŠãƒƒãƒæ•° åŠã³ ãƒ•ã‚£ãƒœãƒŠãƒƒãƒæ•°åˆ—ã‚’è¡¨ç¤ºã—ã¾ã™ã€‚");
+        
+        do{
+            System.out.println("å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚( exit ã¾ãŸã¯ quitã§çµ‚äº†ã—ã¾ã™ã€‚)");
             try {
                 BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
                 String input = reader.readLine();
 
 
                 if (input.equals("exit") || input.equals("quit")) {
-                  System.out.println("ƒvƒƒOƒ‰ƒ€‚ðI—¹‚µ‚Ü‚·B");
+                    System.out.println("ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‚’çµ‚äº†ã—ã¾ã™ã€‚");
                     break;
                 }
 
                 long numl = Long.parseLong(input);
                 if(numl >= 1L && numl <= 70L) {
-                    int num = Integer.parseInt( input );
-                    FibonacciNumber fibonacci = new FibonacciNumber( num );
-                    PrimesNumber primes =new PrimesNumber(num);
+                    int num = Integer.parseInt(input);
+                    FibonacciNumber fibonacci = new FibonacciNumber(num);
+                    PrimesNumber primes = new PrimesNumber(num);
 
-                    System.out.println("‘æ"+ num + "”Ô–Ú‚Ì‘f”@: "+ primes.getNumber());
-
-                    System.out.println("‘æ" + num + "”Ô–Ú‚ÌƒtƒBƒ{ƒiƒbƒ`”@ : " + fibonacci.getNumber());
-
-                    System.out.print("‘æ" + num + "”Ô–Ú‚ÌƒtƒBƒ{ƒiƒbƒ`”—ñ : ");
+                    System.out.println("ç¬¬" + num + "ç•ªç›®ã®ç´ æ•°ã€€: " + primes.getNumber());
+                    System.out.println("ç¬¬" + num + "ç•ªç›®ã®ãƒ•ã‚£ãƒœãƒŠãƒƒãƒæ•°ã€€ : " + fibonacci.getNumber());
+                    System.out.print("ç¬¬" + num + "ç•ªç›®ã®ãƒ•ã‚£ãƒœãƒŠãƒƒãƒæ•°åˆ— : ");
                     String separator = "";
-                    for ( Number fibonacciI : fibonacci.getNumbers() ) {
+                    for (Number fibonacciI : fibonacci.getNumbers()) {
                         System.out.print(separator + fibonacciI);
                         separator = " , ";
                     }
+
                     System.out.println("");
                 }
+
                 else {
-                  System.out.print("”’l‚Í1ˆÈã70ˆÈ‰º‚ð");
+                    System.out.print("æ•°å€¤ã¯1ä»¥ä¸Š70ä»¥ä¸‹ã‚’");
                 }
             }
+
             catch ( NumberFormatException e ) {
-              System.out.println("•¶Žš—ñ‚Ì“ü—Í‚Í exit ‚Ü‚½‚Í quit ‚µ‚©Žó‚¯•t‚¯‚Ü‚¹‚ñB");
-              System.out.print("‚à‚¤ˆê“x");
-          }
-          catch ( OutOfMemoryError e ) {
-              System.out.println("”’l‚ª‘å‚«‚·‚¬‚é‚½‚ßŒvŽZ‚Å‚«‚Ü‚¹‚ñB");
-              System.out.print("‚à‚¤ˆê“x");
+                System.out.println("æ–‡å­—åˆ—ã®å…¥åŠ›ã¯ exit ã¾ãŸã¯ quit ã—ã‹å—ã‘ä»˜ã‘ã¾ã›ã‚“ã€‚");
+                System.out.print("ã‚‚ã†ä¸€åº¦");
+            }
+
+            catch ( OutOfMemoryError e ) {
+                System.out.println("æ•°å€¤ãŒå¤§ãã™ãŽã‚‹ãŸã‚è¨ˆç®—ã§ãã¾ã›ã‚“ã€‚");
+                System.out.print("ã‚‚ã†ä¸€åº¦");
             }
         }
-        while( true );
+    while(true);
     }
 }
