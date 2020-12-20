@@ -6,7 +6,11 @@ import java.math.BigInteger;
 
 
 public class PrimesNumber extends Number {
-    private static List<BigIntenger> primes = new ArrayList<BigIntenger>();
+    
+    //誤字があります。
+    //private static List<BigIntenger> primes = new ArrayList<BigIntenger>();
+    private static List<BigIntenger> primes = new ArrayList<BigInteger>();
+    
     private int N;
     private Number number;
 
